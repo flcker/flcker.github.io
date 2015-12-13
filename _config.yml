@@ -68,14 +68,14 @@ theme: next
 
 #avatar: /uploads/avatar.png
 #avatar: https://avatars1.githubusercontent.com/u/32269?v=3&s=460
-avatar: /uploads/avatar.png
+avatar: /uploads/psb.jpg
 
 since: 2015
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  -type: git 
+  type: git 
   repo: 
-  github: git@github.com:flcker/flcker.github.io.git,master  
-  message: [message]
+    github: https://github.com/flcker/flcker.github.io.git,master  
+  message: default
