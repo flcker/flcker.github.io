@@ -3,14 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Hexo</title>
+  <title>C++跨模块传递字符串参数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="上周五在封装代码的时候有这样一个需求：需要修改传进来的stl string（引用传递），测试的时候总是崩溃在给string赋值的地方。函数如下：
+1234567891011bool get_string( char const * key, const char * defaultOut, std::string &amp;amp;out )&amp;#123;  ......  if ( strstr( key">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++跨模块传递字符串参数">
+<meta property="og:url" content="http://yoursite.com/2016/01/18/C-跨模块传递字符串参数/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="上周五在封装代码的时候有这样一个需求：需要修改传进来的stl string（引用传递），测试的时候总是崩溃在给string赋值的地方。函数如下：
+1234567891011bool get_string( char const * key, const char * defaultOut, std::string &amp;amp;out )&amp;#123;  ......  if ( strstr( key">
+<meta property="og:updated_time" content="2016-01-21T07:48:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="C++跨模块传递字符串参数">
+<meta name="twitter:description" content="上周五在封装代码的时候有这样一个需求：需要修改传进来的stl string（引用传递），测试的时候总是崩溃在给string赋值的地方。函数如下：
+1234567891011bool get_string( char const * key, const char * defaultOut, std::string &amp;amp;out )&amp;#123;  ......  if ( strstr( key">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,215 +66,71 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/08/hello-world/" class="archive-article-date">
-  <time datetime="2016-10-08T13:50:00.275Z" itemprop="datePublished">Oct 8</time>
+        <section id="main"><article id="post-C-跨模块传递字符串参数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/18/C-跨模块传递字符串参数/" class="article-date">
+  <time datetime="2016-01-18T03:23:09.000Z" itemprop="datePublished">2016-01-18</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/08/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      C++跨模块传递字符串参数
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/19/mpeg2-ts协议/" class="archive-article-date">
-  <time datetime="2016-02-19T07:02:24.000Z" itemprop="datePublished">Feb 19</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/19/mpeg2-ts协议/">mpeg2-ts协议</a>
-    </h1>
-  
+        <p>上周五在封装代码的时候有这样一个需求：需要修改传进来的stl string（引用传递），测试的时候总是崩溃在给string赋值的地方。<br>函数如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">get_string</span><span class="params">( <span class="keyword">char</span> <span class="keyword">const</span> * key, <span class="keyword">const</span> <span class="keyword">char</span> * defaultOut, <span class="built_in">std</span>::<span class="built_in">string</span> &amp;out )</span></span></div><div class="line">&#123;</div><div class="line">  ......</div><div class="line"></div><div class="line">  <span class="keyword">if</span> ( <span class="built_in">strstr</span>( key, LOCALIZED_KEY_PREFIX ) != key )</div><div class="line">	&#123;</div><div class="line">		out = defaultOut; <span class="comment">// !这个地方会崩溃</span></div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">  ......</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>后来发现在同一个so中调用是可以的，但是在so外调用就出现这个问题了。</p>
+<p><strong>此外把NULL赋值给std::string也会造成崩溃，但是声明时是可以，因为</strong></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/17/视频编解码-学习一/" class="archive-article-date">
-  <time datetime="2016-02-17T02:55:28.000Z" itemprop="datePublished">Feb 17</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/17/视频编解码-学习一/">视频编解码-学习一</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/29/stl中list用法/" class="archive-article-date">
-  <time datetime="2016-01-29T04:22:13.000Z" itemprop="datePublished">Jan 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/18/C-跨模块传递字符串参数/" data-id="ciu19t6kr00005gv1j7wan563" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/29/stl中list用法/">stl中list用法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/markdown使用技巧辑录/" class="archive-article-date">
-  <time datetime="2016-01-25T03:59:54.000Z" itemprop="datePublished">Jan 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/markdown使用技巧辑录/">markdown使用技巧辑录</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/21/mingw和vim的搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          post
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/16/hexo使用过程中遇到的问题与解决/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo使用过程中遇到的问题与解决</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/数据存储类型auto-static-extern-register/" class="archive-article-date">
-  <time datetime="2016-01-25T03:28:28.000Z" itemprop="datePublished">Jan 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/数据存储类型auto-static-extern-register/">数据存储类型auto,static,extern,register</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/21/mingw和vim的搭建/" class="archive-article-date">
-  <time datetime="2016-01-21T08:18:35.000Z" itemprop="datePublished">Jan 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/21/mingw和vim的搭建/">post</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/18/C-跨模块传递字符串参数/" class="archive-article-date">
-  <time datetime="2016-01-18T03:23:09.000Z" itemprop="datePublished">Jan 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/C-跨模块传递字符串参数/">C++跨模块传递字符串参数</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/16/hexo使用过程中遇到的问题与解决/" class="archive-article-date">
-  <time datetime="2016-01-16T13:16:59.000Z" itemprop="datePublished">Jan 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/16/hexo使用过程中遇到的问题与解决/">hexo使用过程中遇到的问题与解决</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/16/git-s-commands/" class="archive-article-date">
-  <time datetime="2016-01-16T09:04:51.000Z" itemprop="datePublished">Jan 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/16/git-s-commands/">git常用命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

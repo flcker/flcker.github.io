@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>数据存储类型auto,static,extern,register | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C(C++)语言中的每个变量有两个属性：数据类型（整形、浮点型、字符型），还有数据存储类别，分别为自动的(auto)，静态的(static)，寄存器的(register)和外部的(extern)。
+extern外部变量声明，是指这是一个已在别的地方定义过的对象，这里只是对变量的一次重复引用，不会产生新的变量。
+static静态数据，数据存放在全局数据区，但作用域只是本 文件/函数 中，所以你可以在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据存储类型auto,static,extern,register">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/数据存储类型auto-static-extern-register/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="C(C++)语言中的每个变量有两个属性：数据类型（整形、浮点型、字符型），还有数据存储类别，分别为自动的(auto)，静态的(static)，寄存器的(register)和外部的(extern)。
+extern外部变量声明，是指这是一个已在别的地方定义过的对象，这里只是对变量的一次重复引用，不会产生新的变量。
+static静态数据，数据存放在全局数据区，但作用域只是本 文件/函数 中，所以你可以在">
+<meta property="og:updated_time" content="2016-01-26T07:34:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据存储类型auto,static,extern,register">
+<meta name="twitter:description" content="C(C++)语言中的每个变量有两个属性：数据类型（整形、浮点型、字符型），还有数据存储类别，分别为自动的(auto)，静态的(static)，寄存器的(register)和外部的(extern)。
+extern外部变量声明，是指这是一个已在别的地方定义过的对象，这里只是对变量的一次重复引用，不会产生新的变量。
+static静态数据，数据存放在全局数据区，但作用域只是本 文件/函数 中，所以你可以在">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数据存储类型auto-static-extern-register" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/数据存储类型auto-static-extern-register/" class="article-date">
+  <time datetime="2016-01-25T03:28:28.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据存储类型auto,static,extern,register
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C(C++)语言中的每个变量有两个属性：<code>数据类型</code>（整形、浮点型、字符型），还有<code>数据存储类别</code>，分别为自动的(auto)，静态的(static)，寄存器的(register)和外部的(extern)。</p>
+<h2 id="extern"><a href="#extern" class="headerlink" title="extern"></a>extern</h2><p>外部变量声明，是指这是一个已在别的地方定义过的对象，这里只是对变量的一次重复引用，不会产生新的变量。</p>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>静态数据，数据存放在全局数据区，但<strong>作用域只是本 文件/函数 中，所以你可以在两个不同的文件/函数内部申明同名的static变量，但是           它们是两个不同的全局变量。</strong> 如果是定义在函数内，那么该对象具有无链接，函数外不能对其访问。如果是定义在函数外，那么该对象具          有内部链接，其它程序文件不能对其访问</p>
+<h3 id="常见的两种用途"><a href="#常见的两种用途" class="headerlink" title="常见的两种用途"></a>常见的两种用途</h3><ol>
+<li>统计函数被调用的次数;</li>
+<li>减少局部数组建立和赋值的开销.变量的建立和赋值是需要一定的处理器开销的，特别是数组等含有较多元素的存储类型。在一些含有较多的变量并且被经常调用的函数中，可以将一些数组声明为static类型，以减少建立或者初始化这些变量的开销.</li>
+</ol>
+<h3 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h3><ol>
+<li>变量会被放在程序的全局存储区中，这样可以在下一次调用的时候还可以保持原来的赋值。这一点是它与堆栈变量和堆变量的区别。</li>
+<li>变量用static告知编译器，自己仅仅在变量的作用范围内可见。这一点是它与全局变量的区别。</li>
+<li>当static用来修饰全局变量时，它就改变了全局变量的作用域，使其不能被别的程序extern，限制在了当前文件里，但是没有改变其存放位置，还是在全局静态储存区。</li>
+</ol>
+<p>###　使用注意</p>
+<ol>
+<li>若全局变量仅在单个C文件中访问，则可以将这个变量修改为静态全局变量，以降低模块间的耦合度；</li>
+<li>若全局变量仅由单个函数访问，则可以将这个变量改为该函数的静态局部变量，以降低模块间的耦合度；</li>
+<li>设计和使用访问动态全局变量、静态全局变量、静态局部变量的函数时，需要考虑重入问题(只要输入数据相同就应产生相同的输出)。</li>
+</ol>
+<h2 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h2><p>普通局部栈变量，是自动存储，这种对象会自动创建和销毁 ，建议这个变量要放在堆栈上面，调用函数时分配内存，函数结束时释放内            存。<u>一般隐藏auto默认为自动存储类别。我们程序都变量大多是自动变量。</u></p>
+<h2 id="register"><a href="#register" class="headerlink" title="register"></a>register</h2><p>寄存器变量，请求编译器将这个变量保存在CPU的寄存器中，从而加快程序的运行。系统的寄存器是有限制的,声明变量时如:register int i.这种存储类型可以用于频繁使用的变量。</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>被const修饰的东西都受到强制保护，可以预防意外的变动，能提高程序的健壮性。它可以修饰函数的参数、返回值，甚至函数的定义体。</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用:"></a>作用:</h2><h3 id="修饰输入参数"><a href="#修饰输入参数" class="headerlink" title="修饰输入参数"></a>修饰输入参数</h3><ol>
+<li>对于非内部数据类型的输入参数，应该将“值传递”的方式改为“const引用传递”，目的是提高效率。例如将void Func(A a) 改为void Func(const A &amp;a)。</li>
+<li>对于内部数据类型的输入参数，不要将“值传递”的方式改为“const引用传递”。否则既达不到提高效率的目的，又降低了函数的可理解性。例如void Func(int x) 不应该改为void Func(const int &amp;x)。</li>
+</ol>
+<h3 id="用const修饰函数的返回值"><a href="#用const修饰函数的返回值" class="headerlink" title="用const修饰函数的返回值"></a>用const修饰函数的返回值</h3><ol>
+<li><p>如果给以“指针传递”方式的函数返回值加const修饰，那么函数返回值（即指针）的内容不能被修改，该返回值只能被赋给加const修饰的同类型指针。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　　　　　　　如对于： const char * GetString(void);</div><div class="line">　　　　　　　如下语句将出现编译错误：</div><div class="line">　　　　　　 　char *str = GetString();//cannot convert from &apos;const char *&apos; to &apos;char *&apos;；</div><div class="line">　　　　　　　正确的用法是：</div><div class="line">　　　　　　　const char *str = GetString();</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果函数返回值采用“值传递方式”，由于函数会把返回值复制到外部临时的存储单元中，加const修饰没有任何价值。 如不要把函数int GetInt(void) 写成const int GetInt(void)。</p>
+</li>
+<li><p>const成员函数的声明中，const关键字只能放在函数声明的尾部,表示该类成员不修改对象.</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">说明：</div><div class="line">　　　　const type m; //修饰m为不可改变</div><div class="line">　　　示例：</div><div class="line">　　　　typedef char * pStr; //新的类型pStr;</div><div class="line">　　　　char string[4] = &quot;abc&quot;;</div><div class="line">　　　　const char *p1 = string；</div><div class="line">　　　　p1++; //正确，上边修饰的是*p1,p1可变</div><div class="line">　　　　const pStr p2 = string;</div><div class="line">　　　　p2++; //错误，上边修饰的是p2，p2不可变,*p2可变</div><div class="line">　　　同理，const修饰指针时用此原则判断就不会混淆了。</div><div class="line">　　　　const int *value; //*value不可变，value可变</div><div class="line">　　　　int* const value; //value不可变，*value可变</div><div class="line">　　　　const (int *) value; //(int *)是一种type,value不可变,*value可变</div><div class="line">　　　　　　　　　　　　　　//逻辑上这样理解，编译不能通过，需要tydef int* NewType;</div><div class="line">　　　　const int* const value;//*value,value都不可变</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/数据存储类型auto-static-extern-register/" data-id="ciu19t6m2000z5gv15akqere3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C/C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/25/markdown使用技巧辑录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          markdown使用技巧辑录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/21/mingw和vim的搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">post</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OpenGl/">OpenGl</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/atom/">atom</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/default/">default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/markdown/">markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/media/">media</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/诗词/">诗词</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随想录/">随想录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-C/">C/C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jni/">Jni</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MPEG2-TS/">MPEG2-TS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGl/">OpenGl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list/">list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/media/">media</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mingw/">mingw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stl/">stl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/video/">video</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/咏梅/">咏梅</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/岳飞/">岳飞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/C-C/" style="font-size: 15px;">C/C++</a> <a href="/tags/Jni/" style="font-size: 10px;">Jni</a> <a href="/tags/MPEG2-TS/" style="font-size: 10px;">MPEG2-TS</a> <a href="/tags/OpenGl/" style="font-size: 10px;">OpenGl</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/media/" style="font-size: 15px;">media</a> <a href="/tags/mingw/" style="font-size: 10px;">mingw</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/video/" style="font-size: 10px;">video</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/咏梅/" style="font-size: 10px;">咏梅</a> <a href="/tags/岳飞/" style="font-size: 10px;">岳飞</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/19/mpeg2-ts协议/">mpeg2-ts协议</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/17/视频编解码-学习一/">视频编解码-学习一</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/29/stl中list用法/">stl中list用法</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/markdown使用技巧辑录/">markdown使用技巧辑录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

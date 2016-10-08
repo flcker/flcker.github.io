@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Hexo</title>
+  <title>Jni数据类型的操作 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="字符串Jni把Java字符串当成引用类型来处理，这些引用类型不能像原生C字符串一样可以直接使用，Jni提供了Java字符串与C字符串之间相互转换的必要函数。Java字符串是不可变的，Jni中也没有提供修改Java字符串内容的接口函数。Jni支持Unicode编码和UTF-8编码格式的字符串。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jni数据类型的操作">
+<meta property="og:url" content="http://yoursite.com/2016/01/14/Jni数据类型的操作/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="字符串Jni把Java字符串当成引用类型来处理，这些引用类型不能像原生C字符串一样可以直接使用，Jni提供了Java字符串与C字符串之间相互转换的必要函数。Java字符串是不可变的，Jni中也没有提供修改Java字符串内容的接口函数。Jni支持Unicode编码和UTF-8编码格式的字符串。">
+<meta property="og:updated_time" content="2016-01-21T07:48:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Jni数据类型的操作">
+<meta name="twitter:description" content="字符串Jni把Java字符串当成引用类型来处理，这些引用类型不能像原生C字符串一样可以直接使用，Jni提供了Java字符串与C字符串之间相互转换的必要函数。Java字符串是不可变的，Jni中也没有提供修改Java字符串内容的接口函数。Jni支持Unicode编码和UTF-8编码格式的字符串。">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,215 +63,92 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/08/hello-world/" class="archive-article-date">
-  <time datetime="2016-10-08T13:50:00.275Z" itemprop="datePublished">Oct 8</time>
+        <section id="main"><article id="post-Jni数据类型的操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/14/Jni数据类型的操作/" class="article-date">
+  <time datetime="2016-01-14T07:59:36.000Z" itemprop="datePublished">2016-01-14</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/08/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      Jni数据类型的操作
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/19/mpeg2-ts协议/" class="archive-article-date">
-  <time datetime="2016-02-19T07:02:24.000Z" itemprop="datePublished">Feb 19</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/19/mpeg2-ts协议/">mpeg2-ts协议</a>
-    </h1>
-  
+        <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>Jni把Java字符串当成<code>引用类型</code>来处理，这些引用类型不能像原生C字符串一样可以直接使用，Jni提供了Java字符串与C字符串之间相互转换的必要函数。<br>Java字符串是不可变的，Jni中也没有提供修改Java字符串内容的接口函数。<br>Jni支持Unicode编码和UTF-8编码格式的字符串。</p>
+<a id="more"></a>
+<h3 id="原生代码中创建字符串"><a href="#原生代码中创建字符串" class="headerlink" title="原生代码中创建字符串"></a>原生代码中创建字符串</h3><p>在原声代码中可以通过<code>NewString</code>创建Unicode编码格式的字符串实例，<br>用<code>NewStringUTF</code>创建UTF-8编码格式的字符串实例，两个函数都需要传入一个C字符串的参数，然后返回一个Java字符串引用类型的jstring值。</p>
+<p>C中的用法，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jstring javaString;</div><div class="line">javaString = (*env)-&gt;NewStringUTF( env, &quot;Hello World!&quot;);</div></pre></td></tr></table></figure></p>
+<p>如果内存溢出，这些函数返回NULL以通知原生代码虚拟机中抛出的异常，这样原生代码就会停止运行。</p>
+<h3 id="把Java字符串引用转换为C字符串"><a href="#把Java字符串引用转换为C字符串" class="headerlink" title="把Java字符串引用转换为C字符串"></a>把Java字符串引用转换为C字符串</h3><ul>
+<li><p>Unicode格式字符串：<code>GetStringChars</code></p>
+<blockquote>
+<p>const jchar<em> (</em>GetStringChars)(JNIEnv<em>, jstring, jboolean</em>);</p>
+</blockquote>
+</li>
+<li><p>UTF-8字符串：<code>GetStringUTFChars</code></p>
+<blockquote>
+<p> const char<em> (</em>GetStringUTFChars)(JNIEnv<em>, jstring, jboolean</em>);</p>
+</blockquote>
+</li>
+</ul>
+<p>C中的用法，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">const jbyte* str;</div><div class="line">jboolean isCopy;</div><div class="line"></div><div class="line">str = (*env)-&gt;GetStringUTFChars( env, javaString, &amp;isCopy);</div><div class="line">if( NULL != str )</div><div class="line">&#123;</div><div class="line">  printf( &quot;Java String : %s&quot;, str);</div><div class="line">  if(JNI_TRUE == isCopy)</div><div class="line">  &#123;</div><div class="line">    printf(&quot;C string is a copy of the Java String&quot;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="jobject到jstring"><a href="#jobject到jstring" class="headerlink" title="jobject到jstring"></a>jobject到jstring</h3><p>Java函数返回的Java String，JNI中返回的是jobject，需要将jobject转换为jstring，然后再由jstring生成C字符串。</p>
+<p>下边是我的错误用法：</p>
+<blockquote>
+<p>jstring result_str = jni-&gt;CallObjectMethod( lvrlib_class, get_localized_string_id, activityObj, jKey);</p>
+</blockquote>
+<p>报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">jni/../../../src/lvr_locale.cpp:62:103: error: invalid conversion from &apos;jobject &#123;aka _jobject*&#125;&apos; to &apos;jstring &#123;aka _jstring*&#125;&apos; [-fpermissive]</div><div class="line">jstring result_str = jni-&gt;CallObjectMethod( lvrlib_class, get_localized_string_id, activityObj, jKey);</div></pre></td></tr></table></figure></p>
+<p>即是无法从jobject到jstring隐式转换，所以出现错误。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/17/视频编解码-学习一/" class="archive-article-date">
-  <time datetime="2016-02-17T02:55:28.000Z" itemprop="datePublished">Feb 17</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/17/视频编解码-学习一/">视频编解码-学习一</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/29/stl中list用法/" class="archive-article-date">
-  <time datetime="2016-01-29T04:22:13.000Z" itemprop="datePublished">Jan 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/14/Jni数据类型的操作/" data-id="ciu19t6l600055gv1c0kn5j5m" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/29/stl中list用法/">stl中list用法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/markdown使用技巧辑录/" class="archive-article-date">
-  <time datetime="2016-01-25T03:59:54.000Z" itemprop="datePublished">Jan 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/markdown使用技巧辑录/">markdown使用技巧辑录</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jni/">Jni</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/15/c语言中string操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          string操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/14/android中string-xml的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">android中string.xml的使用</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/数据存储类型auto-static-extern-register/" class="archive-article-date">
-  <time datetime="2016-01-25T03:28:28.000Z" itemprop="datePublished">Jan 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/数据存储类型auto-static-extern-register/">数据存储类型auto,static,extern,register</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/21/mingw和vim的搭建/" class="archive-article-date">
-  <time datetime="2016-01-21T08:18:35.000Z" itemprop="datePublished">Jan 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/21/mingw和vim的搭建/">post</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/18/C-跨模块传递字符串参数/" class="archive-article-date">
-  <time datetime="2016-01-18T03:23:09.000Z" itemprop="datePublished">Jan 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/C-跨模块传递字符串参数/">C++跨模块传递字符串参数</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/16/hexo使用过程中遇到的问题与解决/" class="archive-article-date">
-  <time datetime="2016-01-16T13:16:59.000Z" itemprop="datePublished">Jan 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/16/hexo使用过程中遇到的问题与解决/">hexo使用过程中遇到的问题与解决</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/16/git-s-commands/" class="archive-article-date">
-  <time datetime="2016-01-16T09:04:51.000Z" itemprop="datePublished">Jan 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/16/git-s-commands/">git常用命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">

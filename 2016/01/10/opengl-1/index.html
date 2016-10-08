@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2016 | Hexo</title>
+  <title>OpenGl(一) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="OpenGl 语法OpenGL函数名OpenGL库中所有的函数都会以字符“gl”作为前缀，然后是一个或者多个大写字母开头的词组，以此来命名一个完整的函数（如：glClear），OpenGL都是这种函数格式。OpenGL 的函数的命名方式可以告诉你你所使用的函数来自哪个库，及这个函数有几个参数和参数的类型。所有的函数都有一个词根来描述函数在OpenGL中相应的命令。例如：glColor3f() 有一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenGl(一)">
+<meta property="og:url" content="http://yoursite.com/2016/01/10/opengl-1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="OpenGl 语法OpenGL函数名OpenGL库中所有的函数都会以字符“gl”作为前缀，然后是一个或者多个大写字母开头的词组，以此来命名一个完整的函数（如：glClear），OpenGL都是这种函数格式。OpenGL 的函数的命名方式可以告诉你你所使用的函数来自哪个库，及这个函数有几个参数和参数的类型。所有的函数都有一个词根来描述函数在OpenGL中相应的命令。例如：glColor3f() 有一">
+<meta property="og:updated_time" content="2016-01-21T07:48:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="OpenGl(一)">
+<meta name="twitter:description" content="OpenGl 语法OpenGL函数名OpenGL库中所有的函数都会以字符“gl”作为前缀，然后是一个或者多个大写字母开头的词组，以此来命名一个完整的函数（如：glClear），OpenGL都是这种函数格式。OpenGL 的函数的命名方式可以告诉你你所使用的函数来自哪个库，及这个函数有几个参数和参数的类型。所有的函数都有一个词根来描述函数在OpenGL中相应的命令。例如：glColor3f() 有一">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,215 +63,135 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/10/08/hello-world/" class="archive-article-date">
-  <time datetime="2016-10-08T13:50:00.275Z" itemprop="datePublished">Oct 8</time>
+        <section id="main"><article id="post-opengl-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/10/opengl-1/" class="article-date">
+  <time datetime="2016-01-10T07:31:05.000Z" itemprop="datePublished">2016-01-10</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OpenGl/">OpenGl</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/08/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      OpenGl(一)
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/19/mpeg2-ts协议/" class="archive-article-date">
-  <time datetime="2016-02-19T07:02:24.000Z" itemprop="datePublished">Feb 19</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/19/mpeg2-ts协议/">mpeg2-ts协议</a>
-    </h1>
-  
+        <h2 id="OpenGl-语法"><a href="#OpenGl-语法" class="headerlink" title="OpenGl 语法"></a>OpenGl 语法</h2><h3 id="OpenGL函数名"><a href="#OpenGL函数名" class="headerlink" title="OpenGL函数名"></a>OpenGL函数名</h3><p>OpenGL库中所有的函数都会以字符“gl”作为前缀，然后是一个或者多个大写字母开头的词组，以此来命名一个完整的函数（如：glClear），OpenGL都是这种函数格式。<br>OpenGL 的函数的命名方式可以告诉你你所使用的函数来自哪个库，及这个函数有几个参数和参数的类型。所有的函数都有一个词根来描述函数在OpenGL中相应的命令。例如：glColor3f() 有一个词根color。gl- 前缀描述的是这个函数来自gl库；-3f后缀表示函数有三个实型参数。所有的OpenGL函数是如下格式：<br><a id="more"></a></p>
+<blockquote>
+<p>&lt;库前缀&gt;&lt;根命令&gt;&lt;参数的数目&gt;&lt;参数的类型&gt;。</p>
+</blockquote>
+<p>OpenGl Utility Toolkit是第三方的库，其中的函数以”glut”开头，这是一个流行的跨平台工具库，可以用于显示窗口、管理用户输入以及执行其他一些操作。</p>
+<p>与函数名约定的类似，OpenGl库中定义的常量也是GL_COLOR_BUFFER<em>BIT的形式，所有的常量都是以GL</em>作为前缀，并且使用下划线分隔单词。常量用#define 来完成，一般在<code>glcorearb.h</code>和<code>glext.h</code>中。</p>
+<p>OpenGL是一个C语言形式的库，它的函数不可以重载来处理不同类型的数据，用函数名的细微变化来管理实现同一类功能的函数集。</p>
+<h3 id="OpenGL数据类型及对应的C数据类型"><a href="#OpenGL数据类型及对应的C数据类型" class="headerlink" title="OpenGL数据类型及对应的C数据类型"></a>OpenGL数据类型及对应的C数据类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">OpenGL数据类型</th>
+<th style="text-align:center">数据类型</th>
+<th style="text-align:center">相应的C数据类型</th>
+<th style="text-align:center">后缀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GLbyte</td>
+<td style="text-align:center">8-bit integer</td>
+<td style="text-align:center">signed char</td>
+<td style="text-align:center">b</td>
+</tr>
+<tr>
+<td style="text-align:center">GLshort</td>
+<td style="text-align:center">16-bit integer</td>
+<td style="text-align:center">short</td>
+<td style="text-align:center">s</td>
+</tr>
+<tr>
+<td style="text-align:center">G l int,GLsizei</td>
+<td style="text-align:center">32-bit integer</td>
+<td style="text-align:center">long</td>
+<td style="text-align:center">l</td>
+</tr>
+<tr>
+<td style="text-align:center">GLfloat,GLclampf</td>
+<td style="text-align:center">32-bit floating point</td>
+<td style="text-align:center">float</td>
+<td style="text-align:center">f</td>
+</tr>
+<tr>
+<td style="text-align:center">GLdouble,GLclampd</td>
+<td style="text-align:center">64-bit floating point</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">d</td>
+</tr>
+<tr>
+<td style="text-align:center">GLubyte,GLboolean</td>
+<td style="text-align:center">8-bit unsigned integer</td>
+<td style="text-align:center">unsigned char</td>
+<td style="text-align:center">ub</td>
+</tr>
+<tr>
+<td style="text-align:center">GLushort</td>
+<td style="text-align:center">16-bit unsigned integer</td>
+<td style="text-align:center">unsigned short</td>
+<td style="text-align:center">us</td>
+</tr>
+<tr>
+<td style="text-align:center">GLuint, GLenum, GLbitfield</td>
+<td style="text-align:center">32-bit unsigned integer</td>
+<td style="text-align:center">unsigned int</td>
+<td style="text-align:center">ui</td>
+</tr>
+</tbody>
+</table>
+<p>所有的数据类型都以GL开头，表示是OpenGL。紧跟在后面的大多是它们相应的C数据类型。一些开始有个u表示是无符号的数据类型，如：ubyte表示是无符号的字节。也给出了更多的描述名字的方法，如：size表示一个值的长度。GLsizei表示是一个GL变量，且参数的大小是一个整型。 C lamp是用于颜色的。这种数据类型以f和d结尾表示实型或双精度型数据类型。GLboolean变量用于标示True和False；GLenum用于枚举型变量； GLbitfield 用于包含二进制位的区域的变量。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/17/视频编解码-学习一/" class="archive-article-date">
-  <time datetime="2016-02-17T02:55:28.000Z" itemprop="datePublished">Feb 17</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/17/视频编解码-学习一/">视频编解码-学习一</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/29/stl中list用法/" class="archive-article-date">
-  <time datetime="2016-01-29T04:22:13.000Z" itemprop="datePublished">Jan 29</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/10/opengl-1/" data-id="ciu19t6lm000n5gv1st23kbzw" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/29/stl中list用法/">stl中list用法</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/markdown使用技巧辑录/" class="archive-article-date">
-  <time datetime="2016-01-25T03:59:54.000Z" itemprop="datePublished">Jan 25</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/markdown使用技巧辑录/">markdown使用技巧辑录</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGl/">OpenGl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/14/android中string-xml的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          android中string.xml的使用
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/05/未名/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我用我的固执回应你的漠视</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/25/数据存储类型auto-static-extern-register/" class="archive-article-date">
-  <time datetime="2016-01-25T03:28:28.000Z" itemprop="datePublished">Jan 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/25/数据存储类型auto-static-extern-register/">数据存储类型auto,static,extern,register</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/21/mingw和vim的搭建/" class="archive-article-date">
-  <time datetime="2016-01-21T08:18:35.000Z" itemprop="datePublished">Jan 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/21/mingw和vim的搭建/">post</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/18/C-跨模块传递字符串参数/" class="archive-article-date">
-  <time datetime="2016-01-18T03:23:09.000Z" itemprop="datePublished">Jan 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/18/C-跨模块传递字符串参数/">C++跨模块传递字符串参数</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/16/hexo使用过程中遇到的问题与解决/" class="archive-article-date">
-  <time datetime="2016-01-16T13:16:59.000Z" itemprop="datePublished">Jan 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/16/hexo使用过程中遇到的问题与解决/">hexo使用过程中遇到的问题与解决</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/01/16/git-s-commands/" class="archive-article-date">
-  <time datetime="2016-01-16T09:04:51.000Z" itemprop="datePublished">Jan 16</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/01/16/git-s-commands/">git常用命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/page/2/">__('next') &raquo;</a>
-  </nav>
 </section>
         
           <aside id="sidebar">
