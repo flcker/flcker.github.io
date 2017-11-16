@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 拿枪的剑客</title>
-    <link>flcker.github.io/post/</link>
+    <link>https://flcker.github.io/post/</link>
     <description>Recent content in Posts on 拿枪的剑客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 15 Nov 2017 19:43:01 +0800</lastBuildDate>
     
-	<atom:link href="flcker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://flcker.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Long Artcle</title>
-      <link>flcker.github.io/post/long-artcle/</link>
+      <link>https://flcker.github.io/post/long-artcle/</link>
       <pubDate>Wed, 15 Nov 2017 19:43:01 +0800</pubDate>
       
-      <guid>flcker.github.io/post/long-artcle/</guid>
+      <guid>https://flcker.github.io/post/long-artcle/</guid>
       <description>&lt;h1 id=&#34;长歌行&#34;&gt;长歌行&lt;/h1&gt;
 
 &lt;p&gt;&lt;em&gt;白居易&lt;/em&gt;&lt;/p&gt;
@@ -30,10 +30,10 @@
     
     <item>
       <title>First</title>
-      <link>flcker.github.io/post/first/</link>
+      <link>https://flcker.github.io/post/first/</link>
       <pubDate>Tue, 14 Nov 2017 18:52:16 +0800</pubDate>
       
-      <guid>flcker.github.io/post/first/</guid>
+      <guid>https://flcker.github.io/post/first/</guid>
       <description>&lt;h1 id=&#34;陈情表&#34;&gt;陈情表&lt;/h1&gt;
 
 &lt;p&gt;&lt;em&gt;李密&lt;/em&gt;&lt;/p&gt;
