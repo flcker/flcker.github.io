@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flcker.github.io</id>
     <title>青芒与鱼</title>
-    <updated>2019-08-30T15:43:00.180Z</updated>
+    <updated>2019-09-28T09:54:20.220Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flcker.github.io"/>
     <link rel="self" href="https://flcker.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://flcker.github.io/images/avatar.png</logo>
     <icon>https://flcker.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 青芒与鱼</rights>
+    <entry>
+        <title type="html"><![CDATA[OpenGL | 01 | 渲染管线]]></title>
+        <id>https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian</id>
+        <link href="https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian">
+        </link>
+        <updated>2019-09-03T14:39:20.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="管线">管线</h2>
+<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code>几何着色</code>，<br>
+然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="管线">管线</h2>
+<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code>几何着色</code>，<br>
+然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
+<!-- more -->
+<h2 id="管线序列图">管线序列图</h2>
+<pre><code class="language-mermaid">
+graph LR
+A1(顶点数据)
+A2(顶点着色器)
+A3(细分控制着色器)
+A4(细分计算着色器)
+A5(几何着色器)
+A6(图元设置)
+A7(裁剪)
+A8(光栅化)
+A9(片元着色器)
+A10(帧缓存)
+A1  --&gt; A2
+A2  --&gt; A3
+A3  --&gt; A4
+A4  --&gt; A5
+A5  --&gt; A6
+A6  --&gt; A7
+A7  --&gt; A8
+A8 --&gt; A9
+A9 --&gt; A10
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea - 向Gridea作者致敬]]></title>
         <id>https://flcker.github.io/post/hello-gridea</id>
