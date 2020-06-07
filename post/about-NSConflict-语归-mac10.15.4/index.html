@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OpenGL | 01 | 渲染管线 | 飞鸟与鱼</title>
+<title>关于 | 飞鸟与鱼</title>
 <meta name="description" content="记录、分享、成长" />
 <link rel="shortcut icon" href="https://flcker.github.io/favicon.ico?v=1591543945702">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -77,59 +77,37 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              OpenGL | 01 | 渲染管线
+              关于
             </h2>
             <div class="post-info">
               <span>
-                2019-09-03
+                2019-01-25
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://flcker.github.io/tag/rmFw0wsYN/" class="post-tag">
-                  # OpenGL
-                </a>
-              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h2 id="管线">管线</h2>
-<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code>几何着色</code>，<br>
-然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
-<!-- more -->
-<h2 id="管线序列图">管线序列图</h2>
-<pre><code class="language-mermaid">
-graph LR
-A1(顶点数据)
-A2(顶点着色器)
-A3(细分控制着色器)
-A4(细分计算着色器)
-A5(几何着色器)
-A6(图元设置)
-A7(裁剪)
-A8(光栅化)
-A9(片元着色器)
-A10(帧缓存)
-A1  --&gt; A2
-A2  --&gt; A3
-A3  --&gt; A4
-A4  --&gt; A5
-A5  --&gt; A6
-A6  --&gt; A7
-A7  --&gt; A8
-A8 --&gt; A9
-A9 --&gt; A10
-</code></pre>
+                <blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</blockquote>
+<h2 id="关于本站">🏠 关于本站</h2>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<h2 id="联系我呀">📬 联系我呀</h2>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E7%AE%A1%E7%BA%BF">管线</a></li>
-<li><a href="#%E7%AE%A1%E7%BA%BF%E5%BA%8F%E5%88%97%E5%9B%BE">管线序列图</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
+<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
+<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
+<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
 </ul>
 </li>
 </ul>
@@ -139,15 +117,6 @@ A9 --&gt; A10
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://flcker.github.io/post/hello-gridea-NSConflict-语归-mac10.15.4/">
-              <h3 class="post-title">
-                Hello Gridea
-              </h3>
-            </a>
-          </div>
         
 
         
