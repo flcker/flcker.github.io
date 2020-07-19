@@ -1,167 +1,212 @@
+<!DOCTYPE html>
 <html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>OpenGL | 飞鸟与鱼</title>
-<meta name="description" content="记录、分享、成长" />
-<link rel="shortcut icon" href="https://flcker.github.io/favicon.ico?v=1595146703803">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<head>
+  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- 百度验证 -->
+<meta name="baidu-site-verification" content="1IkquSGR9Z"/>
+
+<title>飞鸟与鱼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="description" content="记录、分享、成长"/>
+<meta name="keywords" content="记录、分享、成长"/>
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="https://flcker.github.io/favicon.ico">
+
 <link rel="stylesheet" href="https://flcker.github.io/styles/main.css">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<!-- Modernizr JS -->
+<script src="https://flcker.github.io/media/scripts/_vendors/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<scripts src="https://flcker.github.io/media/scripts/_vendors/respond.min.js"></scripts>
+<![endif]-->
+
+<!-- Comment -->
 
 
+<script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://flcker.github.io">
-  <img class="avatar" src="https://flcker.github.io/images/avatar.png?v=1595146703803" alt="">
-  </a>
-  <h1 class="site-title">
-    飞鸟与鱼
-  </h1>
-  <p class="site-description">
-    记录、分享、成长
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/flcker" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
+<link crossorigin="anonymous" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" href="https://lib.baomitu.com/font-awesome/5.8.1/css/all.min.css" rel="stylesheet">
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# OpenGL
-            </h2> 
+</head>
+<body>
+
+<div id="fh5co-offcanvas">
+    <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
+        <span><i class="icon-cross3"></i> <span>Close</span></span>
+    </a>
+    <div class="fh5co-bio">
+        <figure>
+            <img src="https://flcker.github.io/media/images/avatar.png" alt="飞鸟与鱼" class="img-responsive">
+        </figure>
+        <h3 class="heading">ABOUT ME</h3>
+        <h2>飞鸟与鱼</h2>
+        <p>记录、分享、成长</p>
+        <ul class="fh5co-social">
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+                <li>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="fh5co-menu">
+        <div class="fh5co-box">
+            <h3 class="heading">搜索</h3>
+            <form action="#">
+                <div class="form-group">
+                    <input type="text" id="bdcsMain" class="form-control" placeholder="输入关键字">
+<!--                    <button type="submit" class="btn btn-sm btn-warning" style="margin-top: 6px; width: 100%">点击搜索</button>-->
+                </div>
+            </form>
         </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/">
-        <h2 class="post-title">OpenGL | 01 | 渲染管线</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-09-03
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://flcker.github.io/tag/rmFw0wsYN/" class="post-tag">
-            # OpenGL
+        <div class="fh5co-box">
+            <h3 class="heading">标签</h3>
+            <ul>
+                
+                    <li><a href="https://flcker.github.io/tag/-2Ruqt1av/">Python</a></li>
+                
+                    <li><a href="https://flcker.github.io/tag/rmFw0wsYN/">OpenGL</a></li>
+                
+                    <li><a href="https://flcker.github.io/tag/b9j_g46wI/">Gridea</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header id="fh5co-header">
+    <div class="container-fluid">
+        <div class="row">
+            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+            <ul class="fh5co-social">
+                
+                    <li>
+                        <a href="/"
+                         >
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives"
+                         >
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags"
+                         >
+                            标签
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/about"
+                         >
+                            关于
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="col-lg-12 col-md-12 text-center">
+                <h1 id="fh5co-logo">
+                    <a href="https://flcker.github.io">飞鸟与鱼 </a>
+                </h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="container-fluid">
+
+  <div class="col-lg-12 col-md-12 text-center tag-title">
+      <i class="fa fa-tag"></i> 标签: <h3>OpenGL</h3>
+  </div>
+
+  <div class="row fh5co-post-entry">
+
+    
+      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
+        <figure class="img-box">
+          <a href="https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/">
+            
           </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        <h2 id="管线">管线</h2>
-<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code>几何着色</code>，<br>
-然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
+        </figure>
+        <span class="fh5co-meta">
+          
+            <div class="tag-container">
+              
+                <a href="https://flcker.github.io/tag/rmFw0wsYN/" class="tag">OpenGL, </a>
+              
+            </div>
+          
+        </span>
+        <h3 class="fh5co-article-title">
+          <a href="https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/">OpenGL | 01 | 渲染管线</a>
+        </h3>
+        <span class="fh5co-meta fh5co-date">2019-09-03</span>
+      </article>
+    
+    <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
 
-      </di>
-    </article>
-  
+  </div>
+
+  <div class="pagination-box animate-box">
+    
+    
+  </div>
 </div>
 
-        <div class="pagination-container">
-  
-  
-</div>
 
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2016 - 2019 Copyright Flcker. All Rights Reserved. | 
-  <a class="rss" href="https://flcker.github.io/atom.xml" target="_blank">RSS</a>
-</div>
+<footer id="fh5co-footer">
+  <p>飞鸟与鱼 | Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2016 - 2019 Copyright Flcker. All Rights Reserved.</p>
+</footer>
 
-<script>
-  hljs.initHighlightingOnLoad()
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+<!-- jQuery -->
+<script src="https://flcker.github.io/media/scripts/_vendors/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="https://flcker.github.io/media/scripts/_vendors/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="https://flcker.github.io/media/scripts/_vendors/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="https://flcker.github.io/media/scripts/_vendors/jquery.waypoints.min.js"></script>
+<!-- Main JS -->
+<script src="https://flcker.github.io/media/scripts/_vendors/main.js"></script>
+<!-- Md5 Min JS -->
+<script src="https://flcker.github.io/media/scripts/_vendors/md5.min.js"></script>
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
+<script type="application/javascript">
+    hljs.initHighlightingOnLoad();
 </script>
 
-      </div>
-    </div>
-  </body>
+
+
+
+</body>
 </html>
