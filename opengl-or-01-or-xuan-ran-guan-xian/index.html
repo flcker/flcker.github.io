@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+      
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -28,6 +28,12 @@
 
 <!-- Comment -->
 
+    
+        <link href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css" rel="stylesheet">
+    
+
+    
+
 
 <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 
@@ -35,7 +41,7 @@
 
   </head>
   <body>
-    
+  
 <div id="fh5co-offcanvas">
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
@@ -142,78 +148,92 @@
 </header>
 
 
-    <div class="container-fluid">
-      <div class="row fh5co-post-entry">
+<!--  <a href="#" class="fh5co-post-prev"><span>👈 Prev</span></a>-->
+<!--  <a href="#" class="fh5co-post-next"><span>Next 👉</span></a>-->
 
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-            <figure class="img-box">
-              <a href="https://flcker.github.io/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://flcker.github.io/tag/-2Ruqt1av/" class="tag">Python, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://flcker.github.io/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/">Python学习｜01｜变量、数据类型、注释</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2020-07-19</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-            <figure class="img-box">
-              <a href="https://flcker.github.io/opengl-or-01-or-xuan-ran-guan-xian/">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://flcker.github.io/tag/rmFw0wsYN/" class="tag">OpenGL, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://flcker.github.io/opengl-or-01-or-xuan-ran-guan-xian/">OpenGL | 01 | 渲染管线</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2019-09-03</span>
-          </article>
-        
-            <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box">
-            <figure class="img-box">
-              <a href="https://flcker.github.io/hello-gridea/">
-                
-                  <img src="https://flcker.github.io/post-images/hello-gridea.png" alt="Hello Gridea - 向Gridea作者致敬" class="img-responsive">
-                
-              </a>
-            </figure>
-            <span class="fh5co-meta">
-              
-                    
-                        <a href="https://flcker.github.io/tag/b9j_g46wI/" class="tag">Gridea, </a>
-                    
-              
-            </span>
-            <h3 class="fh5co-article-title">
-              <a href="https://flcker.github.io/hello-gridea/">Hello Gridea - 向Gridea作者致敬</a>
-            </h3>
-            <span class="fh5co-meta fh5co-date">2018-12-12</span>
-          </article>
-        
-            <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
+  <div class="container-fluid">
+      <div class="row fh5co-post-entry single-entry">
+          <article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+              <figure class="animate-box">
+                  
+              </figure>
+              <span class="fh5co-meta animate-box">
+                  
+                      <div class="tag-container">
+                          
+                              <a href="https://flcker.github.io/tag/rmFw0wsYN/" class="tag">OpenGL, </a>
+                          
+                      </div>
+                  
+              </span>
+              <h2 class="fh5co-article-title animate-box">OpenGL | 01 | 渲染管线</h2>
+              <span class="fh5co-meta fh5co-date animate-box">2019-09-03</span>
 
+              <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+                  <div class="row">
+                      <div class="col-md-12 animate-box post-content">
+                          <p> <h2 id="管线">管线</h2>
+<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code>几何着色</code>，<br>
+然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
+<!-- more -->
+<h2 id="管线序列图">管线序列图</h2>
+<pre><code class="language-mermaid">
+graph LR
+A1(顶点数据)
+A2(顶点着色器)
+A3(细分控制着色器)
+A4(细分计算着色器)
+A5(几何着色器)
+A6(图元设置)
+A7(裁剪)
+A8(光栅化)
+A9(片元着色器)
+A10(帧缓存)
+A1  --&gt; A2
+A2  --&gt; A3
+A3  --&gt; A4
+A4  --&gt; A5
+A5  --&gt; A6
+A6  --&gt; A7
+A7  --&gt; A8
+A8 --&gt; A9
+A9 --&gt; A10
+</code></pre>
+ </p>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              <div class="next-post">
+                                  <div class="next">下一篇</div>
+                                  <a href="https://flcker.github.io/hello-gridea/">
+                                      <h3 class="post-title">
+                                          Hello Gridea - 向Gridea作者致敬
+                                      </h3>
+                                  </a>
+                              </div>
+                          
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 animate-box">
+                          
+                              
+                                  <div id="gitalk-container"></div>
+                              
+
+                              
+                          
+                      </div>
+                  </div>
+              </div>
+
+          </article>
       </div>
-
-      <div class="pagination-box animate-box">
-        
-        
-      </div>
-    </div>
+  </div>
 
     
 <footer id="fh5co-footer">
@@ -237,6 +257,29 @@
 <script type="application/javascript">
     hljs.initHighlightingOnLoad();
 </script>
+
+
+
+    
+        <script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+        <script>
+
+            var gitalk = new Gitalk({
+                clientID: '88c89eddcd20b8755248',
+                clientSecret: 'f3e37047a3422df9d41f90d63546e0df6bfdb15c',
+                repo: 'https://github.com/flcker/flcker.github.io.git',
+                owner: 'flcker',
+                admin: ['flcker'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+
+            gitalk.render('gitalk-container')
+
+        </script>
+    
+
+    
 
 
 

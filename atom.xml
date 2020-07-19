@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flcker.github.io</id>
     <title>飞鸟与鱼</title>
-    <updated>2020-07-19T08:29:00.048Z</updated>
+    <updated>2020-07-19T08:29:14.751Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flcker.github.io"/>
     <link rel="self" href="https://flcker.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 飞鸟与鱼</rights>
     <entry>
         <title type="html"><![CDATA[Python学习｜01｜变量、数据类型、注释]]></title>
-        <id>https://flcker.github.io/post/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/</id>
-        <link href="https://flcker.github.io/post/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/">
+        <id>https://flcker.github.io/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/</id>
+        <link href="https://flcker.github.io/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/">
         </link>
         <updated>2020-07-19T05:21:23.000Z</updated>
         <summary type="html"><![CDATA[<p>变量、数据类型和列表。</p>
@@ -117,8 +117,8 @@ print(message)
     </entry>
     <entry>
         <title type="html"><![CDATA[OpenGL | 01 | 渲染管线]]></title>
-        <id>https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/</id>
-        <link href="https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/">
+        <id>https://flcker.github.io/opengl-or-01-or-xuan-ran-guan-xian/</id>
+        <link href="https://flcker.github.io/opengl-or-01-or-xuan-ran-guan-xian/">
         </link>
         <updated>2019-09-03T14:39:20.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="管线">管线</h2>
@@ -156,8 +156,8 @@ A9 --&gt; A10
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea - 向Gridea作者致敬]]></title>
-        <id>https://flcker.github.io/post/hello-gridea/</id>
-        <link href="https://flcker.github.io/post/hello-gridea/">
+        <id>https://flcker.github.io/hello-gridea/</id>
+        <link href="https://flcker.github.io/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
