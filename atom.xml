@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://flcker.github.io</id>
+    <title>飞鸟与鱼 | 🐦&amp;🐟 </title>
+    <updated>2023-02-20T14:59:49.691Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://flcker.github.io"/>
+    <link rel="self" href="https://flcker.github.io/atom.xml"/>
+    <subtitle>&lt;font size=&quot;2&quot; color=&quot;#20B2AA&quot;&gt;记录 &amp;nbsp;学习&amp;nbsp;分享&lt;/font&gt;</subtitle>
+    <logo>https://flcker.github.io/images/avatar.png</logo>
+    <icon>https://flcker.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, 飞鸟与鱼 | 🐦&amp;🐟 </rights>
+    <entry>
+        <title type="html"><![CDATA[Python学习｜01｜变量、数据类型、注释]]></title>
+        <id>https://flcker.github.io/post/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/</id>
+        <link href="https://flcker.github.io/post/python-xue-xi-or01orbian-liang-shu-ju-lei-xing-he-lie-biao/">
+        </link>
+        <updated>2020-07-19T05:21:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>变量、数据类型和列表。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>变量、数据类型和列表。</p>
+<!-- more -->
+<h2 id="变量">变量</h2>
+<h3 id="命名规则">命名规则</h3>
+<ul>
+<li>变量名只能包含字母、数字和下划线。变量名可以是字母或则下划线开头，不能是数字开头。</li>
+<li>变量名不能包含空格，但是可以使用下划线分隔单词。</li>
+<li>不能使用 <code>Python</code> 关键字和函数名作为变量名，即 <code>Python</code> 保留用于特殊用于用途的单词。</li>
+<li>变量名应该简短又具有描述性。</li>
+<li>慎用小写字母<strong>l</strong>和大些字母<strong>O</strong>，因为可能被人看错成数字1和0。</li>
+</ul>
+<hr>
+<h2 id="数据类型">数据类型</h2>
+<h3 id="字符串">字符串</h3>
+<p>字符串就是一系列字符。在python中，用引号括起来的就是字符串，其中引号可以是单引号或则双引号，如</p>
+<pre><code class="language-python">    &quot;This is a string.&quot;
+    'This is anther string.'
+</code></pre>
+<p>灵活使用单引号和双引号能够在字符串中包含引号和撇号。</p>
+<h4 id="大小写转换">大小写转换</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">用途</th>
+<th style="text-align:left">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title()</td>
+<td style="text-align:left">将首字母大写的方式展示每个单词，即将每个单词首字母都改为大写。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">upper()</td>
+<td style="text-align:left">字符串转为大写</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">lower()</td>
+<td style="text-align:left">字符串转为小写</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>存数据时，lower方法很有用，很多时候不能依赖用户提供正确的大小写，可以先转为小写存储，再首字母大写显示。</p>
+<h4 id="合并拼接">合并（拼接）</h4>
+<p>python使用加号（+）来完成字符串拼接。</p>
+<pre><code class="language-python">first_name = &quot;ada&quot;
+last_name = 'lovelace'
+full_name = first_name + &quot; &quot; + last_name
+print(full_name)
+</code></pre>
+<h4 id="使用制表符t或则换行符n添加空白">使用制表符（\t）或则换行符（\n）添加空白</h4>
+<p>空白泛指任何非打印字符，如空格、制表符和换行符。</p>
+<h4 id="删除空白">删除空白</h4>
+<p><strong>strip</strong> ：剔除两端的空白<br>
+<strong>rstrip</strong> : 剔除末尾的空白<br>
+<strong>lstrip</strong> : 剔除开头的空白</p>
+<p>示例：</p>
+<pre><code class="language-python">message = &quot; hello kitty &quot;
+message.strip()
+message.lstrip()
+message.rstrip()
+</code></pre>
+<p>以上代码的输出是：</p>
+<blockquote>
+<p>'hello kitty'<br>
+'hello kitty '<br>
+' hello kitty'</p>
+</blockquote>
+<h3 id="数字">数字</h3>
+<h4 id="整数">整数</h4>
+<p>支持加（<code>+</code>）减（<code>-</code>）乘（<code>*</code>）除（<code>/</code>）运算。<br>
+乘方运算（<code>**</code>）.<br>
+此外，python支持运算次序，可以通过括号修改运算次序。</p>
+<h4 id="浮点数">浮点数</h4>
+<p>python中凡是带有小数点的数字都是浮点数。<br>
+小数点可以出现在任何位置。<br>
+注意：小数点后小数位是不确定的。</p>
+<pre><code class="language-python">&gt;&gt;&gt; 0.2 + 0.1
+0.30000000000000004
+</code></pre>
+<h4 id="函数str避免类型错误">函数str()避免类型错误</h4>
+<p>将非字符串类型值转为字符串。</p>
+<pre><code class="language-python">year = 2020
+message = &quot;This is &quot; + str(year) + &quot;AD.&quot;
+print(message)
+</code></pre>
+<h2 id="输出结果-this-is-2020ad">输出结果： This is 2020AD.</h2>
+<h2 id="注释">注释</h2>
+<p>在<code>Python</code>中，注视用井号（#）标示。井号后面是注视内容，会被python解释器忽略。<br>
+在代码中要编写清晰、简洁的注视。</p>
+<hr>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[OpenGL | 01 | 渲染管线]]></title>
+        <id>https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/</id>
+        <link href="https://flcker.github.io/post/opengl-or-01-or-xuan-ran-guan-xian/">
+        </link>
+        <updated>2019-09-03T14:39:20.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="管线">管线</h2>
+<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code> 几何着色</code>，<br>
+然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="管线">管线</h2>
+<p>OpenGL首先接收几何数据(顶点和几何图元)，输入到一系列的着色器阶段中进行处理，包括：<code>顶点着色</code> ，<code>细分着色（控制和计算）</code>，<code> 几何着色</code>，<br>
+然后进入<code>光栅化单元（rasterizer）</code>。光栅化单元对所有<code>裁剪区域（clipping region）</code> 内的图元生成片元数据，最后对片元执行<code>片元着色器</code>。</p>
+<!-- more -->
+<h2 id="管线序列图">管线序列图</h2>
+<pre><code class="language-mermaid">
+graph LR
+A1(顶点数据)
+A2(顶点着色器)
+A3(细分控制着色器)
+A4(细分计算着色器)
+A5(几何着色器)
+A6(图元设置)
+A7(裁剪)
+A8(光栅化)
+A9(片元着色器)
+A10(帧缓存)
+A1  --&gt; A2
+A2  --&gt; A3
+A3  --&gt; A4
+A4  --&gt; A5
+A5  --&gt; A6
+A6  --&gt; A7
+A7  --&gt; A8
+A8 --&gt; A9
+A9 --&gt; A10
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>https://flcker.github.io/post/about/</id>
+        <link href="https://flcker.github.io/post/about/">
+        </link>
+        <updated>2019-01-25T11:09:48.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝 下面是我个人的简短介绍😁。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！🤝 下面是我个人的简短介绍😁。</p>
+</blockquote>
+<!-- more -->
+<h2 id="关于本站">🏠 关于本站</h2>
+<p>正在构建中。</p>
+<h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<figure data-type="image" tabindex="1"><img src="https://flcker.github.io/post-images/1676735158849.png" alt="" loading="lazy"></figure>
+<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<ul>
+<li>做饭</li>
+<li>电影</li>
+<li>骑车</li>
+</ul>
+<h2 id="联系我呀">📬 联系我呀</h2>
+]]></content>
+    </entry>
+</feed>
